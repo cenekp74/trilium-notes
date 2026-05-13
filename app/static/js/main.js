@@ -65,6 +65,15 @@
         });
     });
 
+    document.querySelectorAll('.tree-item.tree-dir > .tree-label').forEach(function (label) {
+        label.addEventListener('click', function (e) {
+            if (e.target.closest('.tree-toggle')) return;
+            e.preventDefault();
+            var li = label.closest('.tree-item');
+            if (li) li.classList.toggle('collapsed');
+        });
+    });
+
     // ---- Expand path to active note and scroll into view ----
     function expandActiveNote() {
         var activeLink = document.querySelector('.sidebar-nav a.active');

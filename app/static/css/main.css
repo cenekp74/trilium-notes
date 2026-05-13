@@ -289,6 +289,10 @@ a:hover {
     margin: 0 0.35rem;
 }
 
+.tree-item.tree-dir > .tree-label {
+    cursor: pointer;
+}
+
 .tree-item.active > .tree-label {
     background: var(--color-active-bg);
 }

@@ -359,7 +359,7 @@ a:hover {
     display: none;
     position: fixed;
     top: 0.6rem;
-    left: 0.6rem;
+    right: 0.6rem;
     z-index: 200;
     background: var(--color-sidebar-bg);
     border: 1px solid var(--color-border);

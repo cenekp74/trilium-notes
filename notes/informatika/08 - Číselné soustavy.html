@@ -1,0 +1,126 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>08 - Číselné soustavy</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>08 - Číselné soustavy</h1>
+
+      <div class="ck-content">
+        <h3>Co je číselná soustava</h3>
+        <ul>
+          <li>způsob zápisu čísel pomocí omezeného počtu znaků (cifer)</li>
+          <li><strong>základ (báze)</strong> – počet různých cifer</li>
+          <li>polyadická – hodnota cifry závisí na pozici</li>
+        </ul>
+        <h3>Nejpoužívanější soustavy</h3>
+        <ul>
+          <li><strong>desítková (10)</strong> – 0–9, běžný život</li>
+          <li><strong>dvojková (2)</strong> – 0, 1, základ digitální techniky</li>
+          <li><strong>osmičková (8)</strong> – 0–7, dříve v systémech (UNIX oprávnění)</li>
+          <li><strong>šestnáctková (16) </strong>(hexadecimální) – 0–9, A–F
+            <ul>
+              <li>paměťové adresy, barvy, mac adresy, hashe, …</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Převod z desítkové do jiné</h3>
+        <ul>
+          <li>to zvladnes nejsi blb</li>
+        </ul>
+        <h3>Převod do desítkové</h3>
+        <ul>
+          <li>tohle taky</li>
+        </ul>
+        <h3>Mezi 2, 8 a 16</h3>
+        <ul>
+          <li>2 ↔ 8: skupiny po 3 bitech (zprava)</li>
+          <li>2 ↔ 16: skupiny po 4 bitech (zprava)</li>
+          <li>Příklad: <code>11010110₂</code> = <code>D6₁₆</code> (1101=D, 0110=6)</li>
+        </ul>
+        <h3>Binární tabulka 4 bitů</h3>
+        <figure class="table">
+          <table>
+            <thead>
+              <tr>
+                <th>Bin</th>
+                <th>Dec</th>
+                <th>Hex</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0000</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>0001</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>0010</td>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>0101</td>
+                <td>5</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>1001</td>
+                <td>9</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>1010</td>
+                <td>10</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>1100</td>
+                <td>12</td>
+                <td>C</td>
+              </tr>
+              <tr>
+                <td>1111</td>
+                <td>15</td>
+                <td>F</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+        <h3>Operace v binární soustavě</h3>
+        <ul>
+          <li><strong>sčítání</strong>: 0+0=0, 0+1=1, 1+0=1, 1+1=10 (přenos)</li>
+          <li><strong>odčítání</strong> – pomocí dvojkového doplňku</li>
+          <li><strong>násobení a dělení</strong> – analogicky jako v desítkové</li>
+          <li>logické operace (boolean algebra) - konjunkce (and), disjunkce (or) -
+            celkem užitečný
+            <ul>
+              <li>využití tzv. masek - vektor/matice nul a jedniček, kterou můžu něco vynásobit
+                a zůstanou mi tam jenom ty skibidi co byly v ty masce na pozici jedničky
+                chápem se</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Praktické využití</h3>
+        <ul>
+          <li>Reprezentace dat v paměti</li>
+          <li>Síťové adresy (IPv4 v binární podobě)</li>
+          <li>Barvy v HTML (#FF8800)</li>
+          <li>MAC adresy, hash funkce</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

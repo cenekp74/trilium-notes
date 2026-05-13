@@ -1,0 +1,94 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>15 - Email</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>15 - Email</h1>
+
+      <div class="ck-content">
+        <h3>Co je email</h3>
+        <ul>
+          <li>elektronická pošta – jedna z nejstarších služeb internetu</li>
+          <li>první email odeslal Ray Tomlinson v roce 1971</li>
+        </ul>
+        <h3>Protokoly</h3>
+        <ul>
+          <li><strong>SMTP</strong> (Simple Mail Transfer Protocol)
+            <ul>
+              <li>pro <strong>odesílání</strong> emailů
+                <ul>
+                  <li>jak z klienta na server tak pak mezi servery</li>
+                </ul>
+              </li>
+              <li>port 25 (nešifrovaně), 587 (s TLS)</li>
+            </ul>
+          </li>
+          <li><strong>POP3</strong> (Post Office Protocol v3)
+            <ul>
+              <li>pro <strong>stahování</strong> emailů</li>
+              <li>emaily se stáhnou a obvykle smažou ze serveru
+                <ul>
+                  <li>používané dřív, když bylo serverové úložiště drahé</li>
+                </ul>
+              </li>
+              <li>port 110, 995 (šifrovaně)</li>
+            </ul>
+          </li>
+          <li><strong>IMAP</strong> (Internet Message Access Protocol)
+            <ul>
+              <li>pro <strong>správu</strong> emailů přímo na serveru
+                <ul>
+                  <li>lokálně se ukládají jen dočasně, to co je na serveru je primární</li>
+                </ul>
+              </li>
+              <li>synchronizuje stav (přečtené, složky) mezi zařízeními</li>
+              <li>port 143, 993 (šifrovaně)</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Klient vs. webmail</h3>
+        <ul>
+          <li><strong>emailový klient</strong> – program v PC (Outlook, Thunderbird,
+            Apple Mail)</li>
+          <li><strong>webmail</strong> – přes prohlížeč (Gmail.com, Email.seznam.cz)</li>
+        </ul>
+        <h3>Struktura emailu</h3>
+        <ul>
+          <li><strong>Od (From)</strong> – odesílatel</li>
+          <li><strong>Komu (To)</strong> – příjemce</li>
+          <li><strong>Kopie (Cc)</strong> – Carbon Copy, vidí všichni</li>
+          <li><strong>Skrytá kopie (Bcc)</strong> – Blind Carbon Copy, ostatní nevidí</li>
+          <li><strong>Předmět (Subject)</strong> – nadpis zprávy</li>
+          <li><strong>Tělo (Body)</strong> – obsah</li>
+          <li><strong>Přílohy (Attachments)</strong>
+          </li>
+          <li><strong>Hlavičky</strong> – metadata (datum, trasa, ID, …)</li>
+        </ul>
+        <h3>Rizika a bezpečnost</h3>
+        <ul>
+          <li><strong>Spam</strong> – nevyžádaná hromadná pošta</li>
+          <li><strong>Phishing</strong> – podvodné emaily lákající údaje (banka, doručovatel)</li>
+          <li><strong>Hoax</strong> – řetězové podvodné zprávy</li>
+          <li><strong>Malware v přílohách</strong> – nikdy neotvírat neznámé .exe, .zip,
+            makra</li>
+          <li><strong>Spoofing</strong> – padělání odesílatele</li>
+          <li>Antispam filtry, SPF/DKIM/DMARC – ochrana proti podvržení</li>
+          <li>Šifrování (S/MIME, PGP)</li>
+        </ul>
+        <h3>Populární poskytovatelé</h3>
+        <ul>
+          <li>Gmail (Google), Outlook (Microsoft), Seznam.cz, Centrum.cz, ProtonMail
+            (šifrovaný)</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

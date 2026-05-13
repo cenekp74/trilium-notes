@@ -1,0 +1,101 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>11 - Počítačové sítě – komponenty</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>11 - Počítačové sítě – komponenty</h1>
+
+      <div class="ck-content">
+        <h3>Aktivní prvky</h3>
+        <ul>
+          <li><strong>hub (rozbočovač)</strong>
+            <ul>
+              <li>rozesílá data na všechny porty (broadcast)</li>
+              <li>zastaralé, neefektivní, nahrazeno switchem</li>
+            </ul>
+          </li>
+          <li><strong>switch (přepínač)</strong>
+            <ul>
+              <li>pracuje na linkové vrstvě (L2)
+                <ul>
+                  <li>kromě L3 switchů - ty pracují na síťové, mohou tak routovat i mezi subnety
+                    atd.</li>
+                </ul>
+              </li>
+              <li>posílá data jen na cílový port podle MAC adresy</li>
+              <li>tvoří vlastní kolizní domény pro každý port</li>
+            </ul>
+          </li>
+          <li><strong>router (směrovač)</strong>
+            <ul>
+              <li>pracuje na síťové vrstvě (L3)</li>
+              <li>propojuje různé sítě, určuje cestu paketu</li>
+              <li>domácí router: switch + Wi-Fi AP + router + firewall</li>
+            </ul>
+          </li>
+          <li><strong>access point (AP)</strong> – Wi-Fi přístupový bod</li>
+          <li><strong>modem</strong> – modulátor/demodulátor (ADSL, kabelový)</li>
+          <li><strong>repeater (opakovač)</strong> – zesiluje signál</li>
+          <li><strong>bridge (most)</strong> – propojuje dvě části sítě</li>
+          <li><strong>gateway (brána)</strong> – propojuje sítě s různými protokoly</li>
+          <li><strong>síťová karta (NIC)</strong> – připojuje zařízení do sítě, má MAC
+            adresu</li>
+        </ul>
+        <h3>Pasivní prvky (kabeláž)</h3>
+        <ul>
+          <li><strong>kroucená dvojlinka</strong>
+            <ul>
+              <li>UTP (Unshielded), STP (Shielded – stíněná)</li>
+              <li>kategorie: Cat5e (1 Gbps), Cat6 (10 Gbps), Cat6a, Cat7</li>
+              <li>konektor RJ-45</li>
+              <li>délka max. 100 m</li>
+            </ul>
+          </li>
+          <li><strong>koaxiální kabel</strong>
+            <ul>
+              <li>dříve v sítích, dnes hlavně TV a kabelové připojení</li>
+            </ul>
+          </li>
+          <li><strong>optické vlákno</strong>
+            <ul>
+              <li>přenos světlem, ne elektrickým signálem</li>
+              <li>jednovidové (single-mode) – velké vzdálenosti</li>
+              <li>mnohovidové (multi-mode) – kratší vzdálenosti
+                <ul>
+                  <li>dříve o dost levnější, dneska už o tolik ne, moc se nepoužívá</li>
+                </ul>
+              </li>
+              <li>vysoká rychlost, odolnost proti rušení</li>
+            </ul>
+          </li>
+          <li><strong>patch panel</strong> – propojovací panel v rozvaděči</li>
+          <li><strong>rozvaděč (rack)</strong> – skříň pro aktivní i pasivní prvky</li>
+        </ul>
+        <h3>Adresování v sítích</h3>
+        <ul>
+          <li><strong>MAC adresa</strong>
+            <ul>
+              <li>Fyzická adresa síťové karty</li>
+              <li>48 bitů, zápis v hex (např. 00:1A:2B:3C:4D:5E)</li>
+              <li>Pevně daná výrobcem</li>
+            </ul>
+          </li>
+          <li><strong>IP adresa</strong>
+            <ul>
+              <li>Logická adresa, lze měnit</li>
+              <li>IPv4 (4 byty), IPv6 (16 bytů)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

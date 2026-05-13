@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block page_title %}Search{% if query %}: {{ query }}{% endif %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Search Results</h1>
+    {% if query %}
+    <p class="search-meta">
+        {{ results | length }} result{% if results | length != 1 %}s{% endif %}
+        for &ldquo;<strong>{{ query }}</strong>&rdquo;
+    </p>
+    {% endif %}
+</div>
+
+{% if query %}
+    {% if results %}
+    <ul class="search-results">
+        {% for note in results %}
+        <li class="search-result-item">
+            <a href="/notes/{{ note.path }}">{{ note.title }}</a>
+            <span class="search-result-path">{{ note.path }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <div class="empty-state">
+        <p>No notes found matching &ldquo;<strong>{{ query }}</strong>&rdquo;.</p>
+    </div>
+    {% endif %}
+{% else %}
+<div class="empty-state">
+    <p>Enter a search term above to find notes.</p>
+</div>
+{% endif %}
+{% endblock %}

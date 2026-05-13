@@ -1,0 +1,120 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>19 - Zálohování dat</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>19 - Zálohování dat</h1>
+
+      <div class="ck-content">
+        <h3>Co je zálohování</h3>
+        <ul>
+          <li>vytváření kopie dat pro případ ztráty originálu</li>
+          <li>cíl: ochrana před hardwarovou poruchou, malwarem, vlastní chybou, krádeží</li>
+        </ul>
+        <h3>Rozdíl záloha × archivace</h3>
+        <ul>
+          <li><strong>záloha (backup)</strong> – kopie aktivních dat, určená k obnově</li>
+          <li><strong>archivace</strong> – dlouhodobé uložení dat, která už nejsou aktivně
+            používaná</li>
+        </ul>
+        <h3>Typy záloh</h3>
+        <ul>
+          <li><strong>plná</strong>
+            <ul>
+              <li>kopie všech dat</li>
+              <li>náročná na čas a místo, ale snadná obnova</li>
+            </ul>
+          </li>
+          <li><strong>inkrementální (přírůstková)</strong>
+            <ul>
+              <li>Pouze data změněná od poslední (jakékoli) zálohy</li>
+              <li>rychlá, malá; obnova složitější (potřeba všech přírůstků)</li>
+            </ul>
+          </li>
+          <li><strong>diferenciální (rozdílová)</strong>
+            <ul>
+              <li>pouze data změněná od poslední <em>plné</em> zálohy</li>
+              <li>roste v čase, obnova jednodušší (full + poslední diff)</li>
+            </ul>
+          </li>
+          <li><strong>synchronizace</strong>
+            <ul>
+              <li>trvalé sjednocení dat mezi zařízeními (cloud)</li>
+              <li>pozor: smazání se obvykle taky synchronizuje
+                <ul>
+                  <li>takže to de facto NENI záloha</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>klonování</strong> – přesná kopie disku (obraz)</li>
+        </ul>
+        <h3>Kam zálohovat – média</h3>
+        <ul>
+          <li><strong>externí HDD / SSD</strong> – nejběžnější pro domácnost</li>
+          <li><strong>USB flash disky</strong> – malé objemy, riziko ztráty
+            <ul>
+              <li>nízká životnost</li>
+            </ul>
+          </li>
+          <li><strong>NAS</strong> (Network Attached Storage) – síťové úložiště v domácnosti/firmě
+            <ul>
+              <li>bacha ať to neni trvale připojený k počítači, jinak nám to hajzlové taky
+                zašifrujou při napadení ransomwerem</li>
+            </ul>
+          </li>
+          <li><strong>optické disky</strong> – CD, DVD, Blu-ray (klesající význam)</li>
+          <li><strong>magnetická páska</strong> – velké archivy ve firmách
+            <ul>
+              <li>levné na ukládání, většinou se platí za obnovu (čtení dat)</li>
+            </ul>
+          </li>
+          <li><strong>cloud</strong>
+            <ul>
+              <li>Google Drive, OneDrive, Dropbox, iCloud, Mega</li>
+              <li>Výhody: dostupnost odkudkoli, redundance</li>
+              <li>Nevýhody: závislost na internetu, ochrana soukromí</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Pravidlo 3-2-1</h3>
+        <ul>
+          <li><strong>3</strong> kopie dat (originál + 2 zálohy)</li>
+          <li><strong>2</strong> různá média</li>
+          <li><strong>1</strong> kopie mimo lokalitu (off-site, např. cloud)</li>
+        </ul>
+        <h3>Jak často zálohovat</h3>
+        <ul>
+          <li>podle toho, jakou ztrátu si můžeme dovolit (RPO – Recovery Point Objective)</li>
+          <li>automatizovat (plánovač úloh, software)</li>
+        </ul>
+        <h3>RAID</h3>
+        <ul>
+          <li>Redundant Array of Independent Disks – několik disků jako jeden logický</li>
+          <li>NENÍ to záloha! Je to zvýšení dostupnosti/výkonu.</li>
+          <li>úrovně:
+            <ul>
+              <li><strong>RAID 0</strong> – stripping, zvyšuje výkon, žádná redundance</li>
+              <li><strong>RAID 1</strong> – mirroring, dva disky se zrcadlí</li>
+              <li><strong>RAID 5</strong> – paritní, min. 3 disky, snese výpadek 1</li>
+              <li><strong>RAID 6</strong> – snese výpadek 2 disků</li>
+              <li><strong>RAID 10</strong> – kombinace 1 a 0</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Testování záloh</h3>
+        <ul>
+          <li>zálohy je důležité vždy otestovat - nesmíme tomu jen tak věřit no</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

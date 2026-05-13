@@ -1,0 +1,172 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>12 - Síťové protokoly</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>12 - Síťové protokoly</h1>
+
+      <div class="ck-content">
+        <h3>Co je protokol</h3>
+        <ul>
+          <li>soubor pravidel pro komunikaci mezi zařízeními v síti</li>
+          <li>určuje formát, pořadí a zpracování zpráv</li>
+        </ul>
+        <h3>Referenční model ISO/OSI</h3>
+        <ul>
+          <li>sedmivrstvý teoretický model komunikace v síti</li>
+        </ul>
+        <figure class="table">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Vrstva</th>
+                <th>Jednotka dat (PDU)</th>
+                <th>Adresace</th>
+                <th>Příklady protokolů / prvků</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>7</td>
+                <td>Aplikační</td>
+                <td>data / zpráva</td>
+                <td>URL, jméno</td>
+                <td>HTTP, HTTPS, FTP, SMTP, DNS, DHCP</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Prezentační</td>
+                <td>data</td>
+                <td>—</td>
+                <td>SSL/TLS, šifrování, kódování (ASCII, JPEG)</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Relační</td>
+                <td>data</td>
+                <td>—</td>
+                <td>správa relací (sessions), NetBIOS</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Transportní</td>
+                <td>segment (TCP) / datagram (UDP)</td>
+                <td>port</td>
+                <td>TCP, UDP</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Síťová</td>
+                <td>paket (packet)</td>
+                <td>IP adresa</td>
+                <td>IP, ICMP, IPsec, router</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Linková</td>
+                <td>rámec (frame)</td>
+                <td>MAC adresa</td>
+                <td>Ethernet, Wi-Fi, ARP, switch</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Fyzická</td>
+                <td>bity (signál)</td>
+                <td>—</td>
+                <td>kabely, konektory, hub, opakovač</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+        <h3>Co se děje na jednotlivých vrstvách</h3>
+        <ul>
+          <li><strong>1. fyzická</strong> – přenos čistých <strong>bitů</strong> (elektrický,
+            optický nebo rádiový signál) po médiu</li>
+          <li><strong>2. linková</strong> – baluje bity do <strong>rámců (frame)</strong>,
+            adresuje pomocí <strong>MAC adres</strong>, řeší přístup k médiu a kontrolu
+            chyb (CRC)</li>
+          <li><strong>3. síťová</strong> – směrování <strong>paketů</strong> mezi sítěmi
+            pomocí <strong>IP adres</strong> (úkol routerů)</li>
+          <li><strong>4. transportní</strong> – rozdělí data na <strong>segmenty (TCP)</strong> nebo <strong>datagramy (UDP)</strong>,
+            adresuje pomocí <strong>portů</strong>, zajišťuje spolehlivost</li>
+          <li><strong>5. relační</strong> – navazuje, udržuje a ukončuje relaci mezi
+            aplikacemi</li>
+          <li><strong>6. prezentační</strong> – formát dat (šifrování, komprese, kódování
+            znaků)</li>
+          <li><strong>7. aplikační</strong> – rozhraní pro aplikace uživatele (prohlížeč,
+            mailový klient)</li>
+        </ul>
+        <h3>Síťové (linkové a transportní) protokoly</h3>
+        <ul>
+          <li>pracují na nižších vrstvách OSI – uživatel je obvykle nevidí, slouží pro
+            samotný přenos dat</li>
+          <li><strong>ARP</strong> – linková/síťová – překládá IP adresu na MAC adresu</li>
+          <li><strong>IP</strong> (síťová vrstva) – internet protocol - přenos paketů
+            mezi sítěmi
+            <ul>
+              <li><strong>IPv4</strong> – 4 byty, např. 192.168.1.1, cca 4,3 mld. adres</li>
+              <li><strong>IPv6</strong> – 16 bytů, např. 2001:0db8::1, prakticky nevyčerpatelné</li>
+              <li>maska podsítě (255.255.255.0 = /24)</li>
+              <li>privátní rozsahy: 10.x.x.x, 172.16–31.x.x, 192.168.x.x</li>
+            </ul>
+          </li>
+          <li><strong>ICMP</strong> – diagnostika sítě (ping, traceroute)</li>
+          <li><strong>NAT</strong> – překlad adres (sdílení jedné veřejné IP více zařízeními)</li>
+          <li><strong>TCP</strong> (transportní)
+            <ul>
+              <li>Spolehlivý, navazuje spojení (3-way handshake)</li>
+              <li>Kontroluje doručení a pořadí segmentů, opakuje ztracená data</li>
+              <li>Pomalejší kvůli režii</li>
+              <li>Použití: web, email, FTP</li>
+            </ul>
+          </li>
+          <li><strong>UDP</strong> (transportní)
+            <ul>
+              <li>Nespolehlivý, bez navázání spojení</li>
+              <li>Rychlejší, menší režie, žádné opakování ztracených datagramů</li>
+              <li>Použití: streamování, online hry, VoIP, DNS</li>
+            </ul>
+          </li>
+          <li><strong>DHCP</strong> – automatické přidělování IP adres v síti</li>
+        </ul>
+        <h3>Aplikační protokoly</h3>
+        <ul>
+          <li>pracují na 7. (aplikační) vrstvě OSI – přímo používané aplikacemi</li>
+          <li>typicky komunikují pomocí TCP nebo UDP a využívají <strong>porty</strong>
+          </li>
+          <li><strong>HTTP</strong> (port 80) – přenos webových stránek</li>
+          <li><strong>HTTPS</strong> (port 443) – HTTP zabezpečené přes TLS</li>
+          <li><strong>FTP</strong> (port 20 a 21) – přenos souborů</li>
+          <li><strong>SFTP / SCP</strong> (port 22) – zabezpečený přenos souborů přes
+            SSH</li>
+          <li><strong>SMTP</strong> (port 25, 587) – odesílání emailů</li>
+          <li><strong>POP3</strong> (port 110, 995) – stažení emailů ze serveru</li>
+          <li><strong>IMAP</strong> (port 143, 993) – správa emailů přímo na serveru</li>
+          <li><strong>DNS</strong> (port 53) – překlad doménových jmen na IP adresy</li>
+          <li><strong>SSH</strong> (port 22) – zabezpečená vzdálená správa terminálu</li>
+          <li><strong>Telnet</strong> (port 23) – vzdálená správa (nešifrované, zastaralé)</li>
+          <li><strong>RDP</strong> (port 3389) – vzdálená plocha Windows</li>
+          <li><strong>SNMP</strong> – správa a monitoring síťových zařízení</li>
+        </ul>
+        <h3>Shrnutí adresování</h3>
+        <ul>
+          <li><strong>MAC adresa</strong> (linková) – fyzická adresa síťové karty, 48
+            bitů</li>
+          <li><strong>IP adresa</strong> (síťová) – logická adresa zařízení v síti</li>
+          <li><strong>Port</strong> (transportní) – číslo služby/aplikace na zařízení
+            (0–65 535)</li>
+          <li><strong>URL / doménové jméno</strong> (aplikační) – lidsky čitelný odkaz</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

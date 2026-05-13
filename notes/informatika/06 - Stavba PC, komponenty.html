@@ -1,0 +1,132 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>06 - Stavba PC, komponenty</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>06 - Stavba PC, komponenty</h1>
+
+      <div class="ck-content">
+        <h3>Základní deska (motherboard)</h3>
+        <ul>
+          <li>hlavní deska propojující všechny komponenty</li>
+          <li>obsahuje:
+            <ul>
+              <li>socket (patice) pro CPU - AM4, AM5, LGA1200, LGA1851, …</li>
+              <li>sloty RAM (DIMM)</li>
+              <li>sloty PCI Express (pro grafiku, karty)</li>
+              <li>interní konektory SATA, M.2 (úložiště), interní USB, …</li>
+              <li>čipset (Northbridge, Southbridge – dnes integrované)</li>
+              <li>BIOS/UEFI v paměti flash</li>
+              <li>konektory - USB, audio, síť, video</li>
+            </ul>
+          </li>
+          <li>formáty: ATX, micro-ATX, mini-ITX</li>
+        </ul>
+        <h3>Procesor (CPU)</h3>
+        <ul>
+          <li>provádí instrukce programu
+            <ul>
+              <li>zdroják → assebmly → strojový kód</li>
+              <li>různé architektiry
+                <ul>
+                  <li>X86, x64</li>
+                  <li>ARM</li>
+                  <li>RISC-V - open source - menší počet jednodušších instrukcí, celkem teď
+                    frčí vývoj idk</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>části: (asi nemusíme vědet idk)
+            <ul>
+              <li><strong>ALU</strong> – aritmeticko-logická jednotka</li>
+              <li><strong>Řadič</strong> – řídí běh instrukcí</li>
+              <li><strong>Registry</strong> – nejrychlejší paměť přímo v CPU</li>
+              <li><strong>Cache</strong> – L1, L2, L3 (vyrovnávací paměť)</li>
+            </ul>
+          </li>
+          <li>parametry:
+            <ul>
+              <li>frekvence (GHz) – počet taktů za sekundu</li>
+              <li>počet jader (core) a vláken (thread)</li>
+              <li>architektura (x86, x64, ARM)</li>
+              <li>TDP (tepelný výkon)</li>
+            </ul>
+          </li>
+          <li>výrobci: Intel (Core i3/i5/i7/i9), AMD (Ryzen 3/5/7), SnapDragon (mobily
+            - ARM), Apple (řada M procesorů)</li>
+        </ul>
+        <h3>Operační paměť (RAM)</h3>
+        <ul>
+          <li>Random Access Memory – rychlá, dočasná, mizí při vypnutí
+            <ul>
+              <li>random access protože můžeme přistupovat se stejnou rychlostí na jakékoliv
+                místo v paměti</li>
+            </ul>
+          </li>
+          <li>DDR3, DDR4, DDR5; LPDDR3/4/5 (low profile - notebooky), SO-DIMM (paměť
+            přímo na základní desce, třeba macy)</li>
+          <li>single/dual channel</li>
+          <li>parametry: kapacita (GB), frekvence (MHz), latence (CL)</li>
+        </ul>
+        <h3>Grafická karta (GPU)</h3>
+        <ul>
+          <li>vykresluje obraz, počítá grafiku, dnes i AI</li>
+          <li>integrovaná (v CPU) vs. dedikovaná (samostatná)</li>
+          <li>vlastní paměť VRAM</li>
+          <li>výrobci: NVIDIA (GeForce/Quadro), AMD (Radeon), Intel (Arc)</li>
+        </ul>
+        <h3>Úložiště</h3>
+        <ul>
+          <li><strong>HDD</strong> – Hard Disk Drive
+            <ul>
+              <li>mechanické, magnetické plotny, čtecí hlavy</li>
+              <li>větší kapacita za nižší cenu, ale pomalejší</li>
+              <li>otáčky: 5400, 7200, 10000 RPM</li>
+              <li>rozhraní: PATA (starý), SATA</li>
+            </ul>
+          </li>
+          <li><strong>SSD</strong> – Solid State Drive
+            <ul>
+              <li>flash paměť, bez pohyblivých částí</li>
+              <li>mnohem rychlejší, tišší, odolnější</li>
+              <li>rozhraní: SATA, NVMe (M.2)</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Zdroj (PSU)</h3>
+        <ul>
+          <li>mění střídavý 230 V na stejnosměrné napětí pro počítač</li>
+          <li>výkon ve W (350–1000+)</li>
+          <li>Certifikace 80 PLUS (Bronze, Silver, Gold, Platinum)</li>
+        </ul>
+        <h3>Chlazení</h3>
+        <ul>
+          <li>vzduchové – ventilátor + chladič</li>
+          <li>vodní – AIO nebo vlastní okruh</li>
+          <li>pasivní – jen chladič, bez ventilátoru</li>
+        </ul>
+        <h3>Skříň (case)</h3>
+        <ul>
+          <li>mechanická ochrana, chlazení, estetika</li>
+          <li>formáty podle základní desky (ATX, mATX)</li>
+        </ul>
+        <h3>BIOS / UEFI</h3>
+        <ul>
+          <li>základní vstupně-výstupní systém</li>
+          <li>startuje po zapnutí (POST – Power On Self Test)</li>
+          <li>načte operační systém ze zavádějícího zařízení</li>
+          <li>UEFI – moderní nástupce s GUI a víc fcema</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

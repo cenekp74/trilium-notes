@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\potuz\\\\Desktop\\\\Projects\\\\trilium-notes\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(pip install *)",
+      "Bash(python -c \"from app import app; from app.notes_utils import scan_notes_tree, get_note_content, search_notes; print\\('Import OK'\\)\")",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

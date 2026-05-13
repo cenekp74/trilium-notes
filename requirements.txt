@@ -7,3 +7,4 @@ python-dotenv>=1.0.0
 flask-login
 flask-bcrypt
 flask-migrate
+beautifulsoup4>=4.12.0

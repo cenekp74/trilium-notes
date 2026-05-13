@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %}Notes{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+{%- macro render_tree(nodes, active_path='') -%}
+<ul class="tree-list">
+{%- for node in nodes %}
+    {%- set is_active = active_path and active_path == node.path %}
+    <li class="tree-item{{ ' tree-dir' if node.type == 'dir' else '' }}{{ ' active' if is_active else '' }}"
+        data-path="{{ node.path or '' }}">
+        <div class="tree-label">
+            {%- if node.type == 'dir' and node.children %}
+            <button class="tree-toggle" aria-label="Toggle folder" tabindex="0">▾</button>
+            {%- else %}
+            <span class="tree-indent"></span>
+            {%- endif %}
+            {%- if node.path %}
+            <a href="/notes/{{ node.path }}"{{ ' class="active"' | safe if is_active else '' }}>{{ node.title }}</a>
+            {%- else %}
+            <span class="tree-no-link">{{ node.title }}</span>
+            {%- endif %}
+        </div>
+        {%- if node.children %}
+        {{ render_tree(node.children, active_path) }}
+        {%- endif %}
+    </li>
+{%- endfor %}
+</ul>
+{%- endmacro %}
+
+<button class="hamburger" id="hamburger-btn" aria-label="Open navigation" aria-expanded="false">&#9776;</button>
+<div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+<div class="layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="/" class="site-title">public-notes</a>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close navigation">&times;</button>
+        </div>
+        <div class="sidebar-search">
+            <form action="/search" method="get" role="search">
+                <input type="search" name="q" placeholder="Search notes..."
+                       value="{{ request.args.get('q', '') }}"
+                       id="search-input" autocomplete="off" aria-label="Search notes">
+            </form>
+        </div>
+        <nav class="sidebar-nav" aria-label="Notes tree">
+            {%- if tree %}
+                {{ render_tree(tree, current_path if current_path is defined else '') }}
+            {%- else %}
+                <p class="no-notes">No notes found. Place TriliumNext HTML exports in the <code>notes/</code> folder.</p>
+            {%- endif %}
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        {% block content %}{% endblock %}
+    </main>
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

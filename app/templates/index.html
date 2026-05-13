@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block page_title %}Notes{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>public-notes</h1>
+</div>
+<p>
+    <a href="https://potuznik.dev">potuznik.dev</a><br>
+    <a href="https://public-files.potuznik.dev">public-files.potuznik.dev</a><br><br>
+</p>
+
+<h2>Notes</h2>
+
+{% if tree %}
+<div class="note-grid">
+    {% for node in tree %}
+    <a href="{{ '/browse/' + node.dir_path if node.type == 'dir' else ('/notes/' + node.path if node.path else '#') }}"
+       class="note-card{{ ' note-card--folder' if node.type == 'dir' else '' }}">
+        <div class="note-card-title">{{ node.title }}</div>
+        {% if node.children %}
+        <div class="note-card-meta">{{ node.children | length }} child{% if node.children | length != 1 %}ren{% endif %}</div>
+        {% endif %}
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <p>No notes yet. Export notes from TriliumNext and place the folder inside <code>notes/</code>.</p>
+</div>
+{% endif %}
+{% endblock %}

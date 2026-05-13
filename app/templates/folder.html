@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block page_title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        {% for crumb in breadcrumbs %}
+        <span class="breadcrumb-sep">/</span>
+        {% if loop.last %}
+        <span>{{ crumb.title }}</span>
+        {% else %}
+        <a href="/browse/{{ crumb.path }}">{{ crumb.title }}</a>
+        {% endif %}
+        {% endfor %}
+    </nav>
+    <h1>{{ title }}</h1>
+    {% if folder_note_path %}
+    <a href="/notes/{{ folder_note_path }}" class="view-note-btn">View note &rarr;</a>
+    {% endif %}
+</div>
+
+{% if children %}
+<div class="note-grid">
+    {% for node in children %}
+    <a href="{{ '/browse/' + node.dir_path if node.type == 'dir' else ('/notes/' + node.path if node.path else '#') }}"
+       class="note-card{{ ' note-card--folder' if node.type == 'dir' else '' }}">
+        <div class="note-card-title">{{ node.title }}</div>
+        {% if node.type == 'dir' %}
+        <div class="note-card-meta">Folder{% if node.children %} &middot; {{ node.children | length }} item{% if node.children | length != 1 %}s{% endif %}{% endif %}</div>
+        {% endif %}
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <p>This folder is empty.</p>
+</div>
+{% endif %}
+{% endblock %}

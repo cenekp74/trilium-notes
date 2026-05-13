@@ -1,0 +1,156 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>20 - Organizace souborů v systému</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>20 - Organizace souborů v systému</h1>
+
+      <div class="ck-content">
+        <h3>Soubor</h3>
+        <ul>
+          <li>pojmenovaná logická jednotka dat na úložišti</li>
+          <li>skládá se z obsahu, jména, přípony a metadat</li>
+          <li><strong>metadata</strong>: velikost, datum vytvoření/změny, přístupová
+            práva, vlastník, …</li>
+        </ul>
+        <h3>Přípona souboru</h3>
+        <ul>
+          <li>část za poslední tečkou v názvu (např. <code>dokument.docx</code>)</li>
+          <li>určuje typ souboru a aplikaci, která ho otevře</li>
+          <li>ve windowsech z nějakýho důvodu defaultně schovaný, legit nejhorší rozhodnutí
+            všech dob</li>
+          <li>Příklady:
+            <ul>
+              <li>Texty: .txt, .docx, .pdf, .odt</li>
+              <li>Tabulky: .xlsx, .ods, .csv</li>
+              <li>Prezentace: .pptx, .odp</li>
+              <li>Obrázky: .jpg, .png, .gif, .bmp, .svg</li>
+              <li>Zvuk: .mp3, .wav, .flac, .ogg</li>
+              <li>Video: .mp4, .avi, .mkv, .mov</li>
+              <li>Archivy: .zip, .rar, .7z, .tar.gz</li>
+              <li>Spustitelné: .exe, .msi, .app, .sh
+                <ul>
+                  <li>na linuxu jsou binární spustitelné soubory bez přípony</li>
+                </ul>
+              </li>
+              <li>Kód: .py, .js, .html, .css, .java</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Složka (adresář)</h3>
+        <ul>
+          <li>kontejner pro soubory a další podsložky</li>
+          <li>slouží k logické organizaci dat</li>
+          <li>hierarchie – stromová struktura</li>
+        </ul>
+        <h3>Cesta k souboru</h3>
+        <ul>
+          <li><strong>absolutní cesta</strong> – od kořene
+            <ul>
+              <li>Windows: <code>C:\Users\skibid\Dokumenty\soubor.txt</code>
+              </li>
+              <li>Linux/macOS: <code>/home/skibid/dokumenty/soubor.txt</code>
+              </li>
+            </ul>
+          </li>
+          <li><strong>relativní cesta</strong> – od aktuální složky
+            <ul>
+              <li><code>./obrazky/foto.jpg</code> (aktuální složka)</li>
+              <li><code>../zaloha/</code> (o úroveň výš)</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Souborový systém</h3>
+        <ul>
+          <li>způsob organizace souborů na úložišti</li>
+          <li>příklady:
+            <ul>
+              <li><strong>FAT32</strong> – starší, max. velikost souboru 4 GB, kompatibilní
+                <ul>
+                  <li>často menší USB</li>
+                </ul>
+              </li>
+              <li><strong>exFAT</strong> – pro USB/SD karty, bez limitu 4 GB</li>
+              <li><strong>NTFS</strong> – Windows, podporuje práva, šifrování, žurnál</li>
+              <li><strong>ext4</strong> – Linux, žurnálový
+                <ul>
+                  <li>na windowsech si ho nepřečtem :(</li>
+                </ul>
+              </li>
+              <li><strong>APFS</strong> – macOS (od 2017)</li>
+              <li><strong>HFS+</strong> – starší macOS</li>
+              <li><strong>Btrfs, ZFS</strong> – pokročilé (snapshoty, kontrolní součty)</li>
+            </ul>
+          </li>
+          <li>disk se rozděluje na tzv. partitiony, které právě formátujeme do určitého
+            souborového systému
+            <ul>
+              <li>defaultně se ve windowsech vytváří 4 partitiony na disku:
+                <ul>
+                  <li>EFI system partition - cca 200 MB jako FAT32, informace se spuštění systému</li>
+                  <li>MSR (Microsoft Reserved Partition) - 16 MB, nevim co to je</li>
+                  <li>Windows partition - to co používáme (C:\)</li>
+                  <li>Recovery partiotion - obsahuje minimální verzi systému pro případ obnovy</li>
+                </ul>
+              </li>
+              <li>můžeme editovat pomocí Správy disků ve windowsech</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Operace se soubory a složkami</h3>
+        <ul>
+          <li>vytvoření, přejmenování, smazání</li>
+          <li>kopírování (Ctrl+C / Ctrl+V) – zůstane originál</li>
+          <li>přesun (Ctrl+X / Ctrl+V) – originál se smaže</li>
+          <li>vlastnosti – metadata</li>
+          <li>skrytí souboru – nezobrazuje se ve výchozím náhledu</li>
+          <li>komprese – ZIP/RAR/7z/TAR (menší velikost, archivace)</li>
+          <li>šifrování</li>
+        </ul>
+        <h3>Práva (oprávnění)</h3>
+        <ul>
+          <li><strong>Čtení (r)</strong> – přečíst obsah</li>
+          <li><strong>Zápis (w)</strong> – měnit obsah</li>
+          <li><strong>Spuštění (x)</strong> – spustit soubor</li>
+          <li>linux: tři úrovně – vlastník, skupina, ostatní (např. <code>rwxr-xr--</code>)</li>
+          <li>windows: ACL (Access Control List), uživatelé a skupiny</li>
+        </ul>
+        <h3>Speciální místa ve Windows</h3>
+        <ul>
+          <li><strong>C:\Windows</strong> – systémové soubory</li>
+          <li><strong>C:\Program Files</strong> – nainstalované programy</li>
+          <li><strong>C:\Users\&lt;jméno&gt;</strong> – uživatelský profil
+            <ul>
+              <li>Desktop, Dokumenty, Stažené soubory, Obrázky, Videa</li>
+            </ul>
+          </li>
+          <li><strong>Koš</strong> – smazané soubory (dočasně)</li>
+        </ul>
+        <h3>Vyhledávání a třídění</h3>
+        <ul>
+          <li>Podle jména, přípony, data, velikosti, obsahu</li>
+          <li>Filtry, řazení (vzestupně/sestupně)</li>
+          <li>Wildcards: <code>*</code> (libovolný řetězec), <code>?</code> (jeden znak)</li>
+          <li>absolutně peak utilita na vyhledávání je Everything, legit funguje od
+            windows 7 a porad lip nez defaultni vyhledavani</li>
+        </ul>
+        <h3>Doporučená organizace</h3>
+        <ul>
+          <li>Smysluplné názvy souborů a složek</li>
+          <li>Stromová struktura podle témat (Škola, Práce, Foto…)</li>
+          <li>Datum v názvu pro chronologii (např. <code>2026-05-13_zapis.docx</code>)</li>
+          <li>Pravidelné zálohování</li>
+          <li>Mazání nepotřebného</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

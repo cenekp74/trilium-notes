@@ -1,0 +1,137 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>07 - Paměť, jednotky informací</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>07 - Paměť, jednotky informací</h1>
+
+      <div class="ck-content">
+        <h3>Informace v počítači</h3>
+        <ul>
+          <li>vše uloženo binárně – 0 a 1</li>
+        </ul>
+        <h3>Jednotky informace</h3>
+        <ul>
+          <li><strong>Bit (b)</strong> – základní jednotka, 0 nebo 1</li>
+          <li><strong>Byte (B)</strong> – 8 bitů, 256 různých hodnot</li>
+          <li>nibble – 4 bity (poloviční byte) - asi jsme si nerikali nevim</li>
+        </ul>
+        <h3>Násobky (binární a desítkové)</h3>
+        <figure class="table">
+          <table>
+            <thead>
+              <tr>
+                <th>Předpona</th>
+                <th>Binární (IEC)</th>
+                <th>Hodnota</th>
+                <th>Desítková (SI)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Kilo</td>
+                <td>KiB</td>
+                <td>1024 B</td>
+                <td>kB = 1000 B</td>
+              </tr>
+              <tr>
+                <td>Mega</td>
+                <td>MiB</td>
+                <td>1024 KiB</td>
+                <td>MB = 1 000 000 B</td>
+              </tr>
+              <tr>
+                <td>Giga</td>
+                <td>GiB</td>
+                <td>1024 MiB</td>
+                <td>GB = 10⁹ B</td>
+              </tr>
+              <tr>
+                <td>Tera</td>
+                <td>TiB</td>
+                <td>1024 GiB</td>
+                <td>TB</td>
+              </tr>
+              <tr>
+                <td>Peta</td>
+                <td>PiB</td>
+                <td>1024 TiB</td>
+                <td>PB</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+        <p>mebibyte vs. megabyte atd. - obojí se používá stejně, ale megabyte je
+          správně jenom 1000 kb and ne 1024 chapem se</p>
+        <h3>Rozdělení pamětí</h3>
+        <ul>
+          <li><strong>vnitřní</strong> – přímo v CPU nebo na základní desce
+            <ul>
+              <li>Registry – nejrychlejší, přímo v CPU</li>
+              <li>Cache – L1, L2, L3</li>
+              <li>RAM – operační paměť</li>
+              <li>ROM – jen ke čtení</li>
+            </ul>
+          </li>
+          <li><strong>vnější</strong> – pro dlouhodobé ukládání
+            <ul>
+              <li>HDD, SSD, USB, paměťové karty, CD/DVD</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>RAM (Random Access Memory)</h3>
+        <ul>
+          <li>operační paměť – běžící programy a data</li>
+          <li><strong>volatilní</strong> (mizí při vypnutí)</li>
+          <li>typy:
+            <ul>
+              <li>SRAM (Static RAM) – rychlá, drahá, používá se v cache</li>
+              <li>DRAM (Dynamic RAM) – levnější, potřebuje obnovování</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>ROM (Read Only Memory)</h3>
+        <ul>
+          <li>paměť jen pro čtení, data zůstávají i po vypnutí</li>
+          <li>obsahuje BIOS, firmware</li>
+          <li>typy: PROM, EPROM (smazatelná UV), EEPROM (elektricky), Flash</li>
+        </ul>
+        <h3>Cache</h3>
+        <ul>
+          <li>vyrovnávací paměť mezi CPU a RAM</li>
+          <li>velmi rychlá, ale malá (KB–MB)</li>
+          <li>L1 – nejmenší, nejrychlejší, v jádře</li>
+          <li>L2 – větší, pomalejší</li>
+          <li>L3 – sdílená mezi jádry</li>
+        </ul>
+        <h3>Externí úložiště</h3>
+        <ul>
+          <li>HDD, SSD, flash disky, paměťové karty (SD, microSD)</li>
+          <li>optická média: CD (700 MB), DVD (4,7 GB), Blu-ray (25–50 GB)</li>
+          <li>cloud</li>
+        </ul>
+        <h3>Hierarchie podle rychlosti a ceny</h3>
+        <ul>
+          <li>nejrychlejší a nejdražší: registry → cache → RAM → SSD → HDD → optika
+            → magnetická páska
+            <ul>
+              <li>magnetický pásky jsou pro dlouhodobý zálohování extrém levný, ale často
+                se pak platí za čtení těch dat (např. můžu zálohovat 100 TB měsíčně za
+                pár korun, ale pak zaplatim tisíce když to někdy chci actually vytahnout
+                z toho</li>
+            </ul>
+          </li>
+          <li>čím rychlejší, tím menší kapacita za stejnou cenu</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

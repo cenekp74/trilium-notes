@@ -1,0 +1,92 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>03 - Typy monitorů, míchání barev</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>03 - Typy monitorů, míchání barev</h1>
+
+      <div class="ck-content">
+        <h3>Monitor</h3>
+        <ul>
+          <li>hlavní výstupní zobrazovací zařízení</li>
+          <li>připojení: HDMI, DisplayPort, DVI, VGA, USB-C</li>
+        </ul>
+        <h3>Technologie zobrazení</h3>
+        <ul>
+          <li><strong>CRT</strong> – Cathode Ray Tube, vakuová obrazovka
+            <ul>
+              <li>elektronové dělo střílí na luminofor</li>
+              <li>velký, těžký, vyzařuje teplo, dnes zastaralý</li>
+            </ul>
+          </li>
+          <li><strong>LCD</strong> – Liquid Crystal Display
+            <ul>
+              <li>tekuté krystaly + podsvícení (CCFL nebo LED)</li>
+              <li>panely: TN (rychlé, horší barvy), IPS (přesné barvy, široký pohled), VA
+                (vysoký kontrast)</li>
+            </ul>
+          </li>
+          <li><strong>LED</strong> – LCD s LED podsvícením (marketingový pojem)</li>
+          <li><strong>OLED</strong> – organic LED
+            <ul>
+              <li>každý pixel svítí sám, dokonalá černá, vysoký kontrast</li>
+              <li>hrozí "vypálení" - nesmí být stejný obraz moc dlouho</li>
+            </ul>
+          </li>
+          <li><strong>QLED</strong> – LCD s quantum dot vrstvou (Samsung)</li>
+          <li><strong>E-ink</strong> – elektronický papír (čtečky knih), velmi nízká
+            spotřeba (nesvítí, mechanicky se v něm mění barva)</li>
+        </ul>
+        <h3>Parametry monitoru</h3>
+        <ul>
+          <li><strong>rozlišení</strong> – počet pixelů (Full HD 1920×1080, QHD 2560×1440,
+            4K 3840×2160)</li>
+          <li><strong>úhlopříčka</strong> – v palcích (24″, 27″, 32″…)</li>
+          <li><strong>obnovovací frekvence</strong> – Hz (60, 120, 144, 240)</li>
+          <li><strong>doba odezvy</strong> – ms (důležité pro hraní)</li>
+          <li><strong>kontrast a jas </strong>- v NITech</li>
+          <li><strong>pozorovací úhly </strong>- starší TN nic moc</li>
+          <li><strong>poměr stran</strong> – 16:9, 21:9 (ultrawide), 4:3 (starý)</li>
+        </ul>
+        <h3>Míchání barev – aditivní (RGB)</h3>
+        <ul>
+          <li><strong>princip:</strong> sčítání světla různých barev</li>
+          <li>R + G + B = bílá, žádná barva = černá</li>
+          <li>R + G = žlutá, G + B = azurová, R + B = purpurová</li>
+          <li>používá se u všech zařízení vyzařujících světlo (monitory, projektory,
+            televize)</li>
+          <li>hodnoty 0–255 (8 bitů), zápis např. <code>#FF8800</code>
+          </li>
+        </ul>
+        <h3>Míchání barev – subtraktivní (CMYK)</h3>
+        <ul>
+          <li><strong>princip:</strong> odečítání světla (barva pohlcuje část spektra)</li>
+          <li>základní barvy: <strong>C</strong>yan, <strong>M</strong>agenta, <strong>Y</strong>ellow, <strong>K</strong>ey
+            (black)</li>
+          <li>C + M + Y = teoreticky černá, v praxi špinavá hnědá → přidává se K</li>
+          <li>používá se u tiskáren a v tisku obecně</li>
+        </ul>
+        <h3>Další barevné modely</h3>
+        <ul>
+          <li><strong>HSB / HSV</strong> – odstín (Hue), sytost (Saturation), jas</li>
+        </ul>
+        <h3>Hloubka barev</h3>
+        <ul>
+          <li>1 bit – 2 barvy (černobílá)</li>
+          <li>8 bitů – 256 barev</li>
+          <li>16 bitů (High Color) – 65 536 barev</li>
+          <li>24 bitů (True Color) – cca 16,7 mil. barev</li>
+          <li>32 bitů – True Color + alfa kanál (průhlednost) - RGBA</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

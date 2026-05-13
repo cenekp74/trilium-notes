@@ -538,19 +538,22 @@ a:hover {
     line-height: 1.75;
 }
 
-.note-body h1 { font-size: 1.6rem; margin: 2rem 0 0.5rem; font-weight: 700; padding-bottom: 0.4rem; border-bottom: 1px solid var(--color-border); }
-.note-body h2 { font-size: 1.35rem; margin: 1.75rem 0 0.5rem; font-weight: 700; padding-bottom: 0.35rem; border-bottom: 1px solid var(--color-border); }
-.note-body h3 { font-size: 1.15rem; margin: 1.5rem 0 0.4rem; font-weight: 600; padding-bottom: 0.3rem; border-bottom: 1px solid var(--color-border); }
+.note-body .content > h1:is(:first-child) {
+    display: none; /* note heading hidden so that it is not duplicated */
+}
+
+.note-body h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; font-weight: 700; padding-bottom: 0.3rem; border-bottom: 1px solid var(--color-border); }
+.note-body h2 { font-size: 1.35rem; margin: 1.4rem 0 0.5rem; font-weight: 700; padding-bottom: 0.25rem; border-bottom: 1px solid var(--color-border); }
+.note-body h3 { font-size: 1.15rem; margin: 1.25rem 0 0.4rem; font-weight: 600; padding-bottom: 0.2rem; border-bottom: 1px solid var(--color-border); }
 .note-body h4,
 .note-body h5,
-.note-body h6 { font-size: 1rem; margin: 1.25rem 0 0.35rem; font-weight: 600; }
+.note-body h6 { font-size: 1rem; margin: 1rem 0 0.4rem; font-weight: 600; }
 
 .note-body p { margin: 0 0 1rem; }
+.note-body li p { margin: 0; }
 
 .note-body ul,
-.note-body ol { margin: 0 0 1rem 1.6rem; }
-
-.note-body li { margin-bottom: 0.35rem; }
+.note-body ol { margin: 0 0 .2rem 1.6rem; }
 
 .note-body blockquote {
     border-left: 3px solid var(--color-accent);

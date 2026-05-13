@@ -524,7 +524,7 @@ a:hover {
 .note-header {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px dotted var(--color-accent);
 }
 
 .note-title {

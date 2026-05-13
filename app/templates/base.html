@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block page_title %}Notes{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script>
+    (function(){
+        function gc(n){var m=document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'));return m?m[2]:null;}
+        var t=gc('theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');
+        document.documentElement.setAttribute('data-theme',t);
+    })();
+    </script>
 </head>
 <body>
 
@@ -41,7 +48,9 @@
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <a href="/" class="site-title">public-notes</a>
-            <button class="sidebar-close" id="sidebar-close" aria-label="Close navigation">&times;</button>
+            <div class="sidebar-header-actions">
+                <button class="sidebar-close" id="sidebar-close" aria-label="Close navigation">&times;</button>
+            </div>
         </div>
         <div class="sidebar-search">
             <form action="/search" method="get" role="search">
@@ -57,6 +66,12 @@
                 <p class="no-notes">No notes found. Place TriliumNext HTML exports in the <code>notes/</code> folder.</p>
             {%- endif %}
         </nav>
+        <div class="sidebar-footer">
+            <label class="theme-switch" for="theme-toggle-cb" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <input type="checkbox" id="theme-toggle-cb" class="theme-switch-input">
+                <span class="theme-switch-track"></span>
+            </label>
+        </div>
     </aside>
 
     <main class="main-content" id="main-content">

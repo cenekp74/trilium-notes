@@ -1,6 +1,30 @@
 (function () {
     'use strict';
 
+    // ---- Dark mode ----
+    function getCookie(name) {
+        var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return m ? m[2] : null;
+    }
+
+    function setCookie(name, value, days) {
+        var d = new Date();
+        d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+        document.cookie = name + '=' + value + '; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+    }
+
+    var toggleCb = document.getElementById('theme-toggle-cb');
+    if (toggleCb) {
+        var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        toggleCb.checked = isDark;
+
+        toggleCb.addEventListener('change', function () {
+            var dark = this.checked;
+            document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+            setCookie('theme', dark ? 'dark' : 'light', 365);
+        });
+    }
+
     var sidebar = document.getElementById('sidebar');
     var hamburger = document.getElementById('hamburger-btn');
     var backdrop = document.getElementById('sidebar-backdrop');

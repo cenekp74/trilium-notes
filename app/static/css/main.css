@@ -23,6 +23,22 @@
 }
 
 /* ================================
+   Dark Theme
+   ================================ */
+[data-theme="dark"] {
+    --color-bg: #1a1a1a;
+    --color-sidebar-bg: #141414;
+    --color-sidebar-border: #2a2a2a;
+    --color-text: #e8e8e8;
+    --color-text-secondary: #909090;
+    --color-accent: #5b9cf6;
+    --color-active-bg: #262626;
+    --color-active-text: #7eb6ff;
+    --color-border: #2a2a2a;
+    --color-code-bg: #111111;
+}
+
+/* ================================
    Reset & Base
    ================================ */
 *, *::before, *::after {
@@ -81,7 +97,7 @@ a:hover {
 .sidebar-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 0.5rem;
     padding: 1rem 1rem 0.75rem;
     border-bottom: 1px solid var(--color-sidebar-border);
     flex-shrink: 0;
@@ -95,11 +111,80 @@ a:hover {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
 }
 
 .site-title:hover {
     color: var(--color-accent);
     text-decoration: none;
+}
+
+.sidebar-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+}
+
+.sidebar-footer {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--color-sidebar-border);
+    flex-shrink: 0;
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.theme-switch-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.theme-switch-track {
+    display: block;
+    width: 36px;
+    height: 20px;
+    background: var(--color-border);
+    border-radius: 10px;
+    position: relative;
+    transition: background var(--transition);
+    border: 1px solid var(--color-sidebar-border);
+}
+
+.theme-switch-track::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform var(--transition);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.theme-switch-input:checked + .theme-switch-track {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.theme-switch-input:checked + .theme-switch-track::after {
+    transform: translateX(16px);
+}
+
+.theme-switch-input:focus-visible + .theme-switch-track {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
 }
 
 .sidebar-close {

@@ -19,7 +19,7 @@
 <ul class="tree-list">
 {%- for node in nodes %}
     {%- set is_active = active_path and active_path == node.path %}
-    <li class="tree-item{{ ' tree-dir' if node.type == 'dir' else '' }}{{ ' active' if is_active else '' }}"
+    <li class="tree-item{{ ' tree-dir' if node.type == 'dir' else '' }}{{ ' collapsed' if node.type == 'dir' and node.children else '' }}{{ ' active' if is_active else '' }}"
         data-path="{{ node.path or '' }}">
         <div class="tree-label">
             {%- if node.type == 'dir' and node.children %}

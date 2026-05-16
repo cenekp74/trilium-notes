@@ -1,0 +1,73 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>08 - Excel – adresování a formátování</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>08 - Excel – adresování a formátování</h1>
+
+      <div class="ck-content">
+        <h2 style="margin-left:0px;"><strong>Tři typy adresování</strong></h2>
+        <figure class="table" style="width:438px;">
+          <table>
+            <tbody>
+              <tr>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;width:26px;"><strong>R</strong>
+                </td>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;"><strong>Relativní</strong>  <code>A1</code> — při kopírování vzorce se mění.</td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;width:26px;"><strong>A</strong>
+                </td>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;"><strong>Absolutní</strong>  <code>$A$1</code> — při kopírování se <em>nemění</em>.
+                  Dolary se přidávají klávesou <span style="background-color:rgb(244,245,247);color:rgb(43,47,51);">F4</span>.</td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;width:26px;"><strong>S</strong>
+                </td>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;"><strong>Smíšené</strong>  <code>$A1</code> (zamčený sloupec) / <code>A$1</code> (zamčený
+                  řádek).</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+        <h3 style="margin-left:0px;"><strong>Typická úloha — DPH</strong></h3>
+        <p style="margin-left:0px;">Do <code>B1</code> napíšeš sazbu <code>0,21</code>. Ve vzorci <code>=A2*$B$1</code> dolary
+          zajistí, že po stažení vzorce dolů bude pořád odkazovat na B1.</p>
+        <h2 style="margin-left:0px;"><strong>Formátování buněk</strong></h2>
+        <p style="margin-left:0px;">Pravým tlačítkem → <strong>Formát buněk</strong> (nebo <span style="background-color:rgb(244,245,247);color:rgb(43,47,51);">Ctrl</span>+
+          <span
+          style="background-color:rgb(244,245,247);color:rgb(43,47,51);">1</span>):</p>
+        <ul>
+          <li>
+            <p style="margin-left:0px;"><strong>Číslo</strong> – počet desetinných míst, měna (1 234,50 Kč), procenta,
+              datum.</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><strong>Zarovnání</strong> – vodorovně, svisle, sloučit buňky, zalomit
+              text.</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><strong>Písmo</strong> – font, velikost, tučně, kurzíva, barva.</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><strong>Ohraničení</strong> – orámování buněk.</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><strong>Výplň</strong> – barva pozadí.</p>
+          </li>
+        </ul>
+        <h4><strong>Podmíněné formátování</strong></h4>
+        <div><strong>Domů</strong>→<strong>Podmíněné formátování</strong>→ např. obarvit
+          buňky <code>&gt; 1000</code> zeleně.</div>
+      </div>
+    </div>
+  </body>
+
+</html>

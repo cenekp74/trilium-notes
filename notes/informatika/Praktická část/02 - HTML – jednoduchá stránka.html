@@ -1,0 +1,50 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>02 - HTML – jednoduchá stránka s obrázky</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>02 - HTML – jednoduchá stránka s obrázky</h1>
+
+      <div class="ck-content">
+        <h2 style="margin-left:0px;"><strong>Tag pro obrázek</strong></h2><pre><code class="language-text-x-trilium-auto">&lt;img src="kocka.jpg" alt="Kočka na okně" width="300"&gt;</code></pre>
+        <ul>
+          <li>
+            <p style="margin-left:0px;"><code>src</code> – cesta k souboru</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>alt</code> – popis pro nevidomé / pokud se obrázek nenačte</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>width</code> / <code>height</code> – rozměry v pixelech</p>
+          </li>
+        </ul>
+        <h2 style="margin-left:0px;"><strong>Kde má obrázek být</strong></h2>
+        <p style="margin-left:0px;">Nejjednodušší: <strong>obrázek i HTML soubor ve stejné složce</strong>.
+          Pak stačí <code>src="kocka.jpg"</code>. Když je v podsložce <code>obrazky/</code>,
+          použij <code>src="obrazky/kocka.jpg"</code>.</p>
+        <h2 style="margin-left:0px;"><strong>Celý příklad</strong></h2><pre><code class="language-text-x-trilium-auto">&lt;!DOCTYPE html&gt;
+&lt;html lang="cs"&gt;
+&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;title&gt;Galerie&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Moje galerie&lt;/h1&gt;
+    &lt;img src="kocka.jpg" alt="Kočka" width="300"&gt;
+    &lt;img src="pes.jpg" alt="Pes" width="300"&gt;
+
+    &lt;p&gt;Odkaz s obrázkem:&lt;/p&gt;
+    &lt;a href="https://www.seznam.cz"&gt;
+        &lt;img src="logo.png" alt="Seznam"&gt;
+    &lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+    </div>
+  </body>
+
+</html>

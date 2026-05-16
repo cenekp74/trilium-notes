@@ -1,0 +1,50 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>07 - Excel – využití vzorců</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>07 - Excel – využití vzorců</h1>
+
+      <div class="ck-content">
+        <h2 style="margin-left:0px;"><strong>Základ</strong></h2>
+        <p style="margin-left:0px;">Každý vzorec začíná <strong>znaménkem rovná se</strong>  <code>=</code>.</p><pre><code class="language-text-x-trilium-auto">=A1+B1
+=A1*0,21
+=(A1+B1)/2</code></pre>
+        <h2 style="margin-left:0px;"><strong>Nejpoužívanější funkce</strong></h2>
+        <ul>
+          <li>
+            <p style="margin-left:0px;"><code>=SUMA(A1:A10)</code> – součet</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>=PRŮMĚR(A1:A10)</code> – aritmetický průměr</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>=MIN(A1:A10)</code>, <code>=MAX(A1:A10)</code>
+            </p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>=POČET(A1:A10)</code> – počet čísel</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>=POČET2(A1:A10)</code> – počet neprázdných buněk</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>=ZAOKROUHLIT(A1; 2)</code> – na 2 desetinná místa</p>
+          </li>
+        </ul>
+        <h2 style="margin-left:0px;"><strong>Podmínky</strong></h2><pre><code class="language-text-x-trilium-auto">=KDYŽ(A1&gt;=5; "prospěl"; "neprospěl")
+=KDYŽ(A1&gt;100; A1*0,9; A1)        ← sleva 10 % nad 100
+=COUNTIF(A1:A10; "&gt;5")            ← kolik buněk je &gt; 5
+=SUMIF(A1:A10; "Praha"; B1:B10)   ← součet podle podmínky</code></pre>
+      </div>
+    </div>
+  </body>
+
+</html>

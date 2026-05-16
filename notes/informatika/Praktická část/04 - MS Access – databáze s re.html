@@ -1,0 +1,91 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>04 - MS Access – databáze s relací dvou tabulek</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>04 - MS Access – databáze s relací dvou tabulek</h1>
+
+      <div class="ck-content">
+        <h2 style="margin-left:0px;"><strong>Příklad: Studenti + Známky</strong></h2>
+        <p style="margin-left:0px;">Vytvoříme dvě tabulky a propojíme je relací 1:N (jeden student má víc
+          známek).</p>
+        <h3 style="margin-left:0px;"><strong>Tabulka Studenti</strong></h3>
+        <ul>
+          <li>
+            <p style="margin-left:0px;"><code>ID_student</code> – Automatické číslo, <strong>primární klíč</strong>
+            </p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>Jmeno</code> – Krátký text</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>Trida</code> – Krátký text</p>
+          </li>
+        </ul>
+        <h3 style="margin-left:0px;"><strong>Tabulka Znamky</strong></h3>
+        <ul>
+          <li>
+            <p style="margin-left:0px;"><code>ID_znamky</code> – Automatické číslo, primární klíč</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>Predmet</code> – Krátký text</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>Znamka</code> – Číslo</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>ID_student</code> – Číslo (foreign key → odkazuje na Studenti)</p>
+          </li>
+        </ul>
+        <h2 style="margin-left:0px;"><strong>Postup vytvoření relace</strong></h2>
+        <figure class="table" style="width:438px;">
+          <table style="border-color:hsl(0, 0%, 0%);">
+            <tbody>
+              <tr>
+                <td style="border-bottom-style:solid;border-bottom-width:1px;border-color:hsl(0, 0%, 0%);padding:6px 10px;vertical-align:top;width:26px;"><strong>1</strong>
+                </td>
+                <td style="border-bottom-style:solid;border-bottom-width:1px;border-color:hsl(0, 0%, 0%);padding:6px 10px;vertical-align:top;">Karta <strong>Vytvořit</strong> → <strong>Návrh tabulky</strong>, založ obě
+                  tabulky a nastav <strong>primární klíč</strong> (klik pravým → primární klíč).</td>
+              </tr>
+              <tr>
+                <td style="border-bottom-style:solid;border-bottom-width:1px;border-color:hsl(0, 0%, 0%);padding:6px 10px;vertical-align:top;width:26px;"><strong>2</strong>
+                </td>
+                <td style="border-bottom-style:solid;border-bottom-width:1px;border-color:hsl(0, 0%, 0%);padding:6px 10px;vertical-align:top;">Karta <strong>Databázové nástroje</strong> → <strong>Relace</strong>.</td>
+              </tr>
+              <tr>
+                <td style="border-bottom-style:solid;border-bottom-width:1px;border-color:hsl(0, 0%, 0%);padding:6px 10px;vertical-align:top;width:26px;"><strong>3</strong>
+                </td>
+                <td style="border-bottom-style:solid;border-bottom-width:1px;border-color:hsl(0, 0%, 0%);padding:6px 10px;vertical-align:top;">Přidej obě tabulky do okna relací.</td>
+              </tr>
+              <tr>
+                <td style="border-bottom-style:solid;border-bottom-width:1px;border-color:hsl(0, 0%, 0%);padding:6px 10px;vertical-align:top;width:26px;"><strong>4</strong>
+                </td>
+                <td style="border-bottom-style:solid;border-bottom-width:1px;border-color:hsl(0, 0%, 0%);padding:6px 10px;vertical-align:top;"><strong>Přetáhni</strong> pole <code>ID_student</code> z tabulky Studenti
+                  na pole <code>ID_student</code> v tabulce Znamky.</td>
+              </tr>
+              <tr>
+                <td style="border-bottom-style:solid;border-bottom-width:1px;border-color:hsl(0, 0%, 0%);padding:6px 10px;vertical-align:top;width:26px;"><strong>5</strong>
+                </td>
+                <td style="border-bottom-style:solid;border-bottom-width:1px;border-color:hsl(0, 0%, 0%);padding:6px 10px;vertical-align:top;">V dialogu zatrhni <strong>„Zajistit referenční integritu"</strong> → Vytvořit.</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+        <h4><strong>Kontrola:</strong></h4>
+        <p>Mezi tabulkami se zobrazí čára s
+          <br><strong>1</strong>
+          <br>u Studenti a
+          <br><strong>∞</strong>
+          <br>u Znamky — to je relace 1:N.&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,55 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>16 - Basic – program s výpočtem</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>16 - Basic – program s výpočtem</h1>
+
+      <div class="ck-content">
+        <h2 style="margin-left:0px;"><strong>Obsah obdélníku</strong></h2><pre><code class="language-text-x-trilium-auto">DIM a AS SINGLE, b AS SINGLE, obsah AS SINGLE
+
+INPUT "Strana a: ", a
+INPUT "Strana b: ", b
+
+obsah = a * b
+PRINT "Obsah obdélníku je: "; obsah</code></pre>
+        <h2 style="margin-left:0px;"><strong>Průměr ze tří čísel</strong></h2><pre><code class="language-text-x-trilium-auto">DIM x AS SINGLE, y AS SINGLE, z AS SINGLE, prumer AS SINGLE
+
+INPUT "Číslo 1: ", x
+INPUT "Číslo 2: ", y
+INPUT "Číslo 3: ", z
+
+prumer = (x + y + z) / 3
+PRINT "Průměr je: "; prumer</code></pre>
+        <h2 style="margin-left:0px;"><strong>Převod Kč na € (s kurzem)</strong></h2><pre><code class="language-text-x-trilium-auto">DIM kc AS SINGLE, kurz AS SINGLE, eur AS SINGLE
+kurz = 24.5
+INPUT "Částka v Kč: ", kc
+eur = kc / kurz
+PRINT kc; " Kč = "; eur; " EUR"</code></pre>
+        <h3 style="margin-left:0px;"><strong>Datové typy</strong></h3>
+        <ul>
+          <li>
+            <p style="margin-left:0px;"><code>INTEGER</code> – celé číslo</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>SINGLE</code> / <code>DOUBLE</code> – desetinné</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><code>STRING</code> – text (např. <code>jmeno AS STRING</code>)</p>
+          </li>
+        </ul>
+        <h3 style="margin-left:0px;"><strong>Aritmetické operátory</strong></h3>
+        <p style="margin-left:0px;"><code>+</code>  <code>-</code>  <code>*</code>  <code>/</code>  <code>^</code> (mocnina) <code>MOD</code> (zbytek) <code>\</code> (celočíselné
+          dělení)</p>
+      </div>
+    </div>
+  </body>
+
+</html>

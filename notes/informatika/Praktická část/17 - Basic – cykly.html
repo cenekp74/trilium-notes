@@ -1,0 +1,46 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>17 - Basic – cykly</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>17 - Basic – cykly</h1>
+
+      <div class="ck-content">
+        <h2 style="margin-left:0px;"><strong>FOR – známý počet opakování</strong></h2><pre><code class="language-text-x-trilium-auto">DIM i AS INTEGER
+FOR i = 1 TO 10
+    PRINT i
+NEXT i</code></pre>
+        <p style="margin-left:0px;">S krokem:</p><pre><code class="language-text-x-trilium-auto">FOR i = 0 TO 100 STEP 10
+    PRINT i           ' 0, 10, 20, ..., 100
+NEXT i</code></pre>
+        <h2 style="margin-left:0px;"><strong>WHILE – dokud platí podmínka</strong></h2><pre><code class="language-text-x-trilium-auto">DIM i AS INTEGER
+i = 1
+WHILE i &lt;= 10
+    PRINT i
+    i = i + 1
+WEND</code></pre>
+        <h2 style="margin-left:0px;"><strong>DO…LOOP UNTIL – dokud neplatí</strong></h2><pre><code class="language-text-x-trilium-auto">DIM j AS INTEGER
+j = 1
+DO
+    PRINT j
+    j = j + 1
+LOOP UNTIL j &gt; 10</code></pre>
+        <h2 style="margin-left:0px;"><strong>Klasický příklad: součet 1 až N</strong></h2><pre><code class="language-text-x-trilium-auto">DIM n AS INTEGER, i AS INTEGER, soucet AS INTEGER
+INPUT "Zadej n: ", n
+soucet = 0
+FOR i = 1 TO n
+    soucet = soucet + i
+NEXT i
+PRINT "Součet 1 až "; n; " je "; soucet</code></pre>
+      </div>
+    </div>
+  </body>
+
+</html>

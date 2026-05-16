@@ -1,0 +1,65 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>10 - Excel – využití maker</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>10 - Excel – využití maker</h1>
+
+      <div class="ck-content">
+        <h2 style="margin-left:0px;"><strong>Co je makro</strong></h2>
+        <p style="margin-left:0px;">Zaznamenaná posloupnost kroků, kterou pak spustíš jedním tlačítkem. V
+          pozadí je kód v jazyce <strong>VBA</strong>.</p>
+        <h2 style="margin-left:0px;"><strong>Zapnutí karty Vývojář</strong></h2>
+        <p style="margin-left:0px;"><strong>Soubor</strong> → <strong>Možnosti</strong> → <strong>Přizpůsobit pás karet</strong> →
+          zaškrtni <strong>Vývojář</strong>.</p>
+        <h2 style="margin-left:0px;"><strong>Záznam makra</strong></h2>
+        <figure class="table" style="width:438px;">
+          <table>
+            <tbody>
+              <tr>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;width:26px;"><strong>1</strong>
+                </td>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;">Karta <strong>Vývojář</strong> → <strong>Záznam makra</strong>.</td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;width:26px;"><strong>2</strong>
+                </td>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;">Pojmenuj (např. <code>Zvyrazni</code>), případně klávesovou zkratku → OK.</td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;width:26px;"><strong>3</strong>
+                </td>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;">Proveď akce (např. označ A1:A10, dej tučně, žlutou výplň).</td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;width:26px;"><strong>4</strong>
+                </td>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;">Karta Vývojář → <strong>Zastavit záznam</strong>.</td>
+              </tr>
+              <tr>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;width:26px;"><strong>5</strong>
+                </td>
+                <td style="border-bottom:1px solid rgb(227, 230, 234);padding:6px 10px;vertical-align:top;">Spuštění: <strong>Vývojář → Makra → vyber → Spustit</strong>, nebo přes
+                  klávesovou zkratku.</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+        <h2 style="margin-left:0px;"><strong>Kód ve VBA</strong></h2>
+        <p style="margin-left:0px;"><span style="background-color:rgb(244,245,247);color:rgb(43,47,51);">Alt</span>+
+          <span
+          style="background-color:rgb(244,245,247);color:rgb(43,47,51);">F11</span>otevře editor. Jednoduchý příklad:</p><pre><code class="language-text-x-trilium-auto">Sub Pozdrav()
+    MsgBox "Ahoj, Excele!"
+End Sub</code></pre>
+      </div>
+    </div>
+  </body>
+
+</html>

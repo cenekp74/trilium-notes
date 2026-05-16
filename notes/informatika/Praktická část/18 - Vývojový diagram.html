@@ -1,0 +1,87 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+    <title data-trilium-title>18 - Vývojový diagram</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>18 - Vývojový diagram</h1>
+
+      <div class="ck-content">
+        <h2 style="margin-left:0px;"><strong>Značky (musíš znát!)</strong></h2>
+        <ul>
+          <li>
+            <p style="margin-left:0px;"><strong>Ovál</strong> ⬭ – <em>začátek / konec</em> programu (Start, Konec).</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><strong>Rovnoběžník</strong> ▱ – <em>vstup / výstup</em> (Načti x, Vypiš
+              y).</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><strong>Obdélník</strong> ▭ – <em>akce / zpracování / přiřazení</em> (y =
+              x + 1).</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><strong>Kosočtverec</strong> ◇ – <em>rozhodnutí (podmínka)</em> – vede z
+              něj ANO / NE.</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><strong>Šipky</strong> → – směr toku.</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;"><strong>Kruh</strong> ○ – spojka (pokračování na jiném místě).</p>
+          </li>
+        </ul>
+        <h2 style="margin-left:0px;"><strong>Pravidla</strong></h2>
+        <ul>
+          <li>
+            <p style="margin-left:0px;">Vždy <strong>jeden Start</strong> a <strong>jeden Konec</strong>.</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;">Z akce vede <strong>jedna šipka pryč</strong>, z podmínky <strong>dvě</strong> (ANO/NE).</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;">Šipky se nekříží (pokud možno).</p>
+          </li>
+          <li>
+            <p style="margin-left:0px;">Tok je shora dolů, zleva doprava.</p>
+          </li>
+        </ul>
+        <h2 style="margin-left:0px;"><strong>Příklad – sudé/liché</strong></h2><pre><code class="language-text-x-trilium-auto">┌─────────┐
+│  Start  │
+└────┬────┘
+     ▼
+┌─────────────┐
+│ Načti x     │
+└────┬────────┘
+     ▼
+   ╱     ╲
+  ╱ x MOD ╲   ANO → ┌──────────┐
+ ╲  2 = 0 ╱ ───────►│ Vypiš    │
+  ╲     ╱           │ "Sudé"   │
+   ╲   ╱            └────┬─────┘
+    NE                   │
+     │                   │
+     ▼                   │
+┌──────────┐             │
+│ Vypiš    │             │
+│ "Liché"  │             │
+└────┬─────┘             │
+     │     ┌─────────────┘
+     ▼     ▼
+   ┌─────────┐
+   │  Konec  │
+   └─────────┘</code></pre>
+        <h2 style="margin-left:0px;"><strong>Kde to nakreslit</strong></h2>
+        <p style="margin-left:0px;">draw.io (diagrams.net) – zdarma, online. Případně Word → Vložit → Tvary,
+          nebo SmartArt.</p>
+      </div>
+    </div>
+  </body>
+
+</html>
